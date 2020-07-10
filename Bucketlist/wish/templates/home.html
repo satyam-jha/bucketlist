@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Just another website
+	</title>
+</head>
+
+<body>
+
+	{% for wish in wishlist %}
+
+	<h1><a href="#">{{wish.wish_tittle}}</a></h1>>
+	<p style="color:blue" >{{wish.wish_description }}</p>
+	<h3>{{wish.wish_status}}</h3>
+</form>
+	{% endfor %}
+</body>
+
+</html>
