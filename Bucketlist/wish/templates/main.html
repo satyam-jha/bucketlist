@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html style="background-image: url({% static 'images/bg-01.jpg' %})">
 
 <head>
     <title>another website</title>
 </head>
 
 <body>
-    <form action="" method="POST">
+	<p>{{request.user}}</p>
+    <form action="" method="POST" >
         {% csrf_token %}
         <div>
-            tittle {{form.wish_tittle}}
+           {{form.as_p}}
         </div>
-
-        <h1>description</h1>
-        {{form.wish_description}}
-        <p>now 3rd</p>
 
 
         <input type="submit" name="ok">

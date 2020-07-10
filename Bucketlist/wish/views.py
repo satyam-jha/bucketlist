@@ -18,10 +18,15 @@ def homepage(request):
 
 def makewish(request):
     form = wishform()
-    if request.method == 'POST':
-        form = wishform(request.POST)
-        if form.is_valid():
 
+    if request.method == 'POST':
+
+        form = wishform(request.POST)
+
+        if form.is_valid():
+            print(request.user)
+            blist = form.save(commit=False)
+            blist.author = request.user
             form.save()
             return redirect('/')
 
